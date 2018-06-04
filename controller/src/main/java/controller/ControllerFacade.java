@@ -42,6 +42,11 @@ public class ControllerFacade implements IController {
      *             the SQL exception
      */
     public void start() throws SQLException {
+        String level = this.getModel().getLevelById(1).toString();
+        level = level.substring(4,level.length());
+        this.getView().loadLevel(level, 1);
+        //this.getView().displayMessage(level);
+        /*this.getView().displayMessage(this.getModel().getLevelById(1).toString());
         this.getView().displayMessage(this.getModel().getExampleById(1).toString());
 
         this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
@@ -52,7 +57,7 @@ public class ControllerFacade implements IController {
             message.append(example);
             message.append('\n');
         }
-        this.getView().displayMessage(message.toString());
+        this.getView().displayMessage(message.toString());*/
     }
 
     /**

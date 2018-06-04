@@ -22,6 +22,8 @@ public interface IModel {
      */
     Example getExampleById(int id) throws SQLException;
 
+    Example getLevelById(int id) throws SQLException;
+
     /**
      * Gets the example by name.
      *

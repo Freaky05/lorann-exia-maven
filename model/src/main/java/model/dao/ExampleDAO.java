@@ -19,6 +19,9 @@ public abstract class ExampleDAO extends AbstractDAO {
     /** The sql example by id. */
     private static String sqlExampleById   = "{call findExampleById(?)}";
 
+    /** The sql level by id. */
+    private static String sqlLevelById   = "{call findLevelById(?)}";
+
     /** The sql example by name. */
     private static String sqlExampleByName = "{call findExampleByName(?)}";
 
@@ -53,6 +56,21 @@ public abstract class ExampleDAO extends AbstractDAO {
         }
         return example;
     }
+
+    public static Example getLevelById(final int id) throws SQLException {
+        final CallableStatement callStatement = prepareCall(sqlLevelById);
+        Example example = null;
+        callStatement.setInt(1, id);
+        if (callStatement.execute()) {
+            final ResultSet result = callStatement.getResultSet();
+            if (result.first()) {
+                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
+            }
+            result.close();
+        }
+        return example;
+    }
+
 
     /**
      * Gets the example by name.

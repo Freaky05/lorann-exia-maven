@@ -29,6 +29,11 @@ public final class ModelFacade implements IModel {
         return ExampleDAO.getExampleById(id);
     }
 
+    @Override
+    public Example getLevelById(final int id) throws SQLException {
+        return ExampleDAO.getLevelById(id);
+    }
+
     /*
      * (non-Javadoc)
      * @see model.IModel#getExampleByName(java.lang.String)
