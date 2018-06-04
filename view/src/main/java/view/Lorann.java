@@ -6,7 +6,11 @@ import java.awt.*;
 public class Lorann extends Movable {
 
     Image LorannImg;
-    ImageIcon iLorannDown = new ImageIcon("Images/lorann_b.png");
+
+    ImageIcon iLorannDown = new ImageIcon("sprites/lorann_b.png");
+
+
+
 
     public Lorann(int x, int y) {
         setX(x);

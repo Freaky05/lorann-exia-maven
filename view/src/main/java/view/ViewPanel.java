@@ -16,11 +16,10 @@ public class ViewPanel extends JPanel implements IView {
     }
 
     @Override
-    public void loadLevel(String level, int numlevel) {
+    public void loadLevel(String level) {
 
-
-        //JOptionPane.showMessageDialog(null, level);
     }
+
 
     public void paint (Graphics g){
         super.paint(g);
@@ -218,7 +217,6 @@ public class ViewPanel extends JPanel implements IView {
                             x--;
                             break;
                         default:
-                            ;
                     }
                     if (x==19){
                         y++;

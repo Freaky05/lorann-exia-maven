@@ -38,13 +38,19 @@ public class ControllerFacade implements IController {
     /**
      * Start.
      *
-     * @throws SQLException
-     *             the SQL exception
      */
     public void start() throws SQLException {
+        String leveltmp = "";
         String level = this.getModel().getLevelById(1).toString();
         level = level.substring(4,level.length());
-        this.getView().loadLevel(level, 1);
+        level.concat(level);
+
+        for (int i=2; i<= 4; i++) {
+            leveltmp = this.getModel().getLevelById(2).toString();
+            leveltmp = leveltmp.substring(4, leveltmp.length());
+            level.concat(level + "¤" + leveltmp);
+        }
+        this.getView().loadLevel(level);
         //this.getView().displayMessage(level);
         /*this.getView().displayMessage(this.getModel().getLevelById(1).toString());
         this.getView().displayMessage(this.getModel().getExampleById(1).toString());
@@ -77,4 +83,6 @@ public class ControllerFacade implements IController {
     public IModel getModel() {
         return this.model;
     }
+
+
 }

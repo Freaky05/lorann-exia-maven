@@ -1,5 +1,9 @@
 package view;
 
+import controller.ControllerFacade;
+
+import java.sql.SQLException;
+
 /**
  * <h1>The Interface IView.</h1>
  *
@@ -7,6 +11,8 @@ package view;
  * @version 1.0
  */
 public interface IView {
+
+
 
     /**
      * Display message.
@@ -16,7 +22,7 @@ public interface IView {
      */
     void displayMessage(String message);
 
-    void loadLevel(String level, int numlevel);
+    void loadLevel(String level);
 
 
 }
